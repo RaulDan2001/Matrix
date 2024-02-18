@@ -6,8 +6,8 @@ using UnityEngine.Audio;
 public class VolumeScript : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    
-    public void Start()
+
+    void Start()
     {
         audioMixer.SetFloat("volumeindex", 5);
     }
