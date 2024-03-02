@@ -42,6 +42,7 @@ public class NewBehaviourScript : MonoBehaviour
     private void Update()
     {
         //verificam daca jucatorul este pe pamant
+        //trimitem o raza inspre pamant de la player si daca colideaza cu pamantul atunci e pe pamant
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
 
         MyInput();
