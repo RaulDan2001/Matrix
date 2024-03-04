@@ -9,6 +9,12 @@ public class PauseScript : MonoBehaviour
 
     public GameObject PauseCanvas;
 
+    void Start()
+    {
+        GamePaused = false;
+        Resume();
+    }
+
     // Update is called once per frame
     void Update()
     {
