@@ -8,6 +8,15 @@ public class PlayerStats : MonoBehaviour
     public Slider slider;
     public int score = 0;
 
+    public int MaxHealth = 100;
+    public int CurrentHealth;
+
+    public void Start()
+    {
+        CurrentHealth = MaxHealth;
+        SetMaxHealth(MaxHealth);
+    }
+
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;

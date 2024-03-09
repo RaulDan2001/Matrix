@@ -12,11 +12,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float JumpForce;
     public float JumpCooldown;
     public float AirMultiplier;
-    
-    public int MaxHealth = 100;
-    public int CurrentHealth;
-
-    public PlayerStats healthbar;
+   
 
     bool ReadyToJump;
 
@@ -44,8 +40,6 @@ public class NewBehaviourScript : MonoBehaviour
 
         ReadyToJump = true;
 
-        CurrentHealth = MaxHealth;
-        healthbar.SetMaxHealth(MaxHealth);
     }
 
     private void Update()
@@ -63,10 +57,6 @@ public class NewBehaviourScript : MonoBehaviour
         else
             rb.drag = 0;
     
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(20);
-        }
     }
 
     private void FixedUpdate()
@@ -131,10 +121,4 @@ public class NewBehaviourScript : MonoBehaviour
         ReadyToJump = true;
     }
 
-    void TakeDamage(int damage)
-    {
-        CurrentHealth -= damage;
-
-        healthbar.SetHealth(CurrentHealth);
-    }
 }
