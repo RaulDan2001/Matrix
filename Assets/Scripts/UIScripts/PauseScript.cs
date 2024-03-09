@@ -60,6 +60,7 @@ public class PauseScript : MonoBehaviour
     {
         PauseCanvas.SetActive(true);
         Time.timeScale = 0f; //oprim timpul din joc ca acesta sa ramana pe pauza
+        Cursor.visible = true;
         GamePaused = true;
 
     }
