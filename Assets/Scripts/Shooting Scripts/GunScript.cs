@@ -47,7 +47,7 @@ public class GunScript : MonoBehaviour
     {
         if (IsReloading) return;
 
-        if(currentAmmo <= 0)
+        if(currentAmmo <= 0 || Input.GetKeyDown(KeyCode.R) && currentAmmo != maxAmmo)
         {
             StartCoroutine(Reload());
             return;

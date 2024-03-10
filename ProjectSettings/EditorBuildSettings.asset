@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StaticTargetScene.unity
     guid: 871204ee19e5f494389514efe64dd837
+  - enabled: 1
+    path: Assets/Scenes/MovingEnemyScene.unity
+    guid: ad0cfcf260c9cb647bde1868dcb353b7
   m_configObjects: {}

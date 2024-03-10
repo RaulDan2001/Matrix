@@ -9,4 +9,9 @@ public class LevelSelectorScript : MonoBehaviour
     {
         SceneManager.LoadScene("StaticTargetScene");
     }
+
+    public void ToMovingEnemyScript()
+    {
+        SceneManager.LoadScene("MovingEnemyScene");
+    }
 }
