@@ -102,6 +102,12 @@ public class GunScript : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
+            TargetBoss targetBoss = hit.transform.GetComponent<TargetBoss>();
+            if (targetBoss != null)
+            {
+                targetBoss.TakeDamage(damage);
+            }
+
             //instantiem sistemul de particule pe punctul lovit si rotim sistemul sa arate in afara suprafetei lovite
             Instantiate(ImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }

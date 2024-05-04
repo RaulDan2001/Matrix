@@ -21,6 +21,12 @@ public class EnemyBehavior : MonoBehaviour
     //Date de atac
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+    public GameObject projectile; 
+
+    //Date de sunet
+    public AudioSource audioSource;
+    public AudioClip ShootClip;
+    
 
     //Stari
     public float sightRange, attackRange;
@@ -32,6 +38,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         player = GameObject.Find("PlayerWithGunAmmoScoreHealthalth").transform;
         agent = GetComponent<NavMeshAgent>();
+        audioSource.clip = ShootClip;
     }
 
 
@@ -90,6 +97,11 @@ public class EnemyBehavior : MonoBehaviour
         
         if (!alreadyAttacked)
         {
+            audioSource.Play();
+            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+
             TakeDamage(Damage);
 
             alreadyAttacked = true;

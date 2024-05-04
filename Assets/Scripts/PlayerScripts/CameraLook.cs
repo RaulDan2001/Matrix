@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
 
         yRotation += mouseX;
         xRotation -= mouseY;
+        //caracterul poate privi doar pana la unghiuri de 90 de grade
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         //rotare camera si orientare

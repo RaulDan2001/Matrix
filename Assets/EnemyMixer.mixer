@@ -6,21 +6,19 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainMixer
+  m_Name: EnemyMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
   m_StartSnapshot: {fileID: 24500006}
-  m_SuspendThreshold: -1
-  m_EnableSuspend: 0
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters:
-  - guid: 1db71554081fa3d4191fbdfcb0a96fbb
-    name: volumeindex
+  m_ExposedParameters: []
   m_AudioMixerGroupViews:
   - guids:
-    - d445d83e8e02631478b550888328f5f9
+    - 0b003a3bffe31ea43b55d44a5621ec25
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -32,10 +30,10 @@ AudioMixerGroupController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: d445d83e8e02631478b550888328f5f9
+  m_GroupID: 0b003a3bffe31ea43b55d44a5621ec25
   m_Children: []
-  m_Volume: 1db71554081fa3d4191fbdfcb0a96fbb
-  m_Pitch: fad846d5cf71f144781f6bcd557b83c2
+  m_Volume: 61b179a0ef5450b499b2bd46a43df905
+  m_Pitch: 515a2e8a6dd198149872710de278e152
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
@@ -50,9 +48,9 @@ AudioMixerEffectController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: d9483657677dda74a9c48b518b90e2f3
+  m_EffectID: 61b16b09e45e7ed4a99a19fa3d19be2d
   m_EffectName: Attenuation
-  m_MixLevel: eb3d02b2424394e4482efb3554a92a11
+  m_MixLevel: 9008866bf702a5c449c2ab708c414097
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -65,7 +63,7 @@ AudioMixerSnapshotController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 6d53395503b650f4da406835a643a963
+  m_SnapshotID: 1318f021ef75a31479a3f129b9cdc4a0
   m_FloatValues:
-    1db71554081fa3d4191fbdfcb0a96fbb: 8.086989
+    61b179a0ef5450b499b2bd46a43df905: 5.0984592
   m_TransitionOverrides: {}
