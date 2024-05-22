@@ -14,4 +14,9 @@ public class LevelSelectorScript : MonoBehaviour
     {
         SceneManager.LoadScene("MovingEnemyScene");
     }
+
+    public void ToBossFightScene()
+    {
+        SceneManager.LoadScene("BossFightScene");
+    }
 }

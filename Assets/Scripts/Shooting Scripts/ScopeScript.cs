@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScopeScript : MonoBehaviour
 {
     public Animator animator;
-    private bool IsScoped = false;
+    static public bool IsScoped = false;
 
     void Update()
     {
