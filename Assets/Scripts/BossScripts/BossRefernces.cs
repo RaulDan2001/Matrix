@@ -8,6 +8,7 @@ public class BossReferences : MonoBehaviour
 {
     public NavMeshAgent navMeshagent;
     public Animator animator;
+    public BossShoting shooter;
 
     [Header("Stats")]
 
@@ -17,5 +18,6 @@ public class BossReferences : MonoBehaviour
     {
         navMeshagent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        shooter = GetComponent<BossShoting>();
     }
 }

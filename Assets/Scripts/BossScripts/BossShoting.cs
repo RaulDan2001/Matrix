@@ -22,23 +22,28 @@ public class BossShoting : MonoBehaviour
 
     [Header("Gun")]
 
-    public Vector3 spread = new Vector3(0.06f, 0.06f, 0.06f);
+    public Vector3 spread = new Vector3(0.04f, 0.04f, 0.04f);
 
     public AudioSource audioSource;
     public AudioClip audioClip;
 
+    public int ammo = 30;
+
     private BossReferences bossReferences;
+
+    private int currentAmmo;
 
     void Awake()
     {
         bossReferences = GetComponent<BossReferences>();
         audioSource.clip = audioClip;
+        Reload();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -49,13 +54,23 @@ public class BossShoting : MonoBehaviour
 
     public void BossShoot()
     {
+        if (ShouldReload()) return; 
+
         Vector3 direction = GetDirection();
         MuzzleFlash.Play();
         audioSource.Play();
         if (Physics.Raycast(shootPoint.position, direction, out RaycastHit hit, float.MaxValue, layerMask))
         {
-            Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 10f, Color.red, 1f);
-            TakeDamage(damage);
+            Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 100f, Color.red, 1f);
+
+            NewBehaviourScript player = hit.transform.GetComponent<NewBehaviourScript>();
+            if (player != null)
+            {
+                TakeDamage(damage);
+            }
+
+
+            currentAmmo -= 1;
         }
 
     }
@@ -77,5 +92,17 @@ public class BossShoting : MonoBehaviour
         healthbar.CurrentHealth -= damage;
 
         healthbar.SetHealth(healthbar.CurrentHealth);
+    }
+
+    public bool ShouldReload()
+    {
+        return currentAmmo <= 0;
+    }
+
+    public void Reload()
+    {
+        Debug.Log("Reload");
+        currentAmmo = ammo;
+
     }
 }
