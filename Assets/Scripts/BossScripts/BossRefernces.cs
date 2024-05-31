@@ -9,6 +9,7 @@ public class BossReferences : MonoBehaviour
     public NavMeshAgent navMeshagent;
     public Animator animator;
     public BossShoting shooter;
+    public TargetBoss targetBoss;
 
     [Header("Stats")]
 

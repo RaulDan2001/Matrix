@@ -8,6 +8,7 @@ public class BigBossFinalScript : MonoBehaviour
 {
     private BossReferences bossReferences;
     private MachineState stateMachine;
+    private bool sem;
 
     void Start()
     {
@@ -15,18 +16,18 @@ public class BigBossFinalScript : MonoBehaviour
 
         stateMachine = new MachineState();
 
-        //punem obiectele de tip cover in vector
+        //creem un obiect de tip cover in acest script prin alegerea unuia de pe harta
         CoverArea coverArea = FindObjectOfType<CoverArea>();
 
         //Stari
         var runToCover = new BossState_RunToCover(bossReferences, coverArea);
-        var delayAfterRun = new BossState_Delay(2f);
+        var delayAfterRun = new BossState_Delay(1f);
         var cover = new BossState_Cover(bossReferences);
 
         //Tranzitii
         At(runToCover, delayAfterRun, () => runToCover.HasArrivedAtDestination());
         At(delayAfterRun, cover, () => delayAfterRun.IsDone());
-
+        
         //Stari de start
         stateMachine.SetState(runToCover);
 

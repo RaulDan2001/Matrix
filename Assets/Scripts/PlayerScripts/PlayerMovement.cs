@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
     [Header("Movement")]
-    public float MoveSpeed;
+    private float MoveSpeed;
+    public float walkSpeed;
+    public float sprintSpeed;
 
     public float groundDrag;
 
+    [Header("Jumping")]
     public float JumpForce;
     public float JumpCooldown;
     public float AirMultiplier;
-   
-
     bool ReadyToJump;
 
     [Header("KeyBinds")]
     public KeyCode jumpkey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -33,13 +37,24 @@ public class NewBehaviourScript : MonoBehaviour
 
     Rigidbody rb;
 
+    public Animator gunAnimator;
+
+    public MovementState state;
+
+    public enum MovementState 
+    {
+        walking,
+        sprinting,
+        air
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         ReadyToJump = true;
-
+        
     }
 
     private void Update()
@@ -50,6 +65,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         MyInput();
         SpeedControl();
+        StateHandler();
 
         //drag handling 
         if (grounded)
@@ -79,6 +95,33 @@ public class NewBehaviourScript : MonoBehaviour
 
             Invoke(nameof(ResetJump), JumpCooldown);
             //pentru ca playerul sa continue sa sara daca tinem butonul de sarit apasat
+        }
+    }
+
+    private void StateHandler()
+    {
+        //Modul - sprint
+        if (grounded && Input.GetKey(sprintKey))
+        {
+            state = MovementState.sprinting;
+            MoveSpeed = sprintSpeed;
+            gunAnimator.SetBool("Sprint",true);
+            gunAnimator.SetBool("IsScoped", false);
+        }
+
+        //Modul - plimbare
+        else if (grounded)
+        {
+            state = MovementState.walking;
+            MoveSpeed = walkSpeed;
+            gunAnimator.SetBool("Sprint", false);
+            
+        }
+
+        //Modul - saritura
+        else
+        {
+            state = MovementState.air;
         }
     }
 

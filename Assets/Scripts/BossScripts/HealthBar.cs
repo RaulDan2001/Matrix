@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
 
     public float MaxHealth = 500f;
-    public float CurrentHealth;
+    [HideInInspector]public float CurrentHealth;
 
     public void Start()
     {

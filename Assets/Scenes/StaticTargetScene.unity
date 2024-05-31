@@ -1549,6 +1549,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 712982359}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &335335235 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1987914897944376832, guid: 89e6b912a2e541b4d937a06b550d1d14,
+    type: 3}
+  m_PrefabInstance: {fileID: 8406882234572218771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348034102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8650,6 +8656,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerWithGunAmmoScoreHealthalth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085571931304719144, guid: 89e6b912a2e541b4d937a06b550d1d14,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142625757304583113, guid: 89e6b912a2e541b4d937a06b550d1d14,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142625757304583113, guid: 89e6b912a2e541b4d937a06b550d1d14,
+        type: 3}
+      propertyPath: gunAnimator
+      value: 
+      objectReference: {fileID: 335335235}
+    - target: {fileID: 4142625757304583113, guid: 89e6b912a2e541b4d937a06b550d1d14,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9038520972553888239, guid: 89e6b912a2e541b4d937a06b550d1d14,
         type: 3}
