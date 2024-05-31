@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -15,6 +16,14 @@ public class PlayerStats : MonoBehaviour
     {
         CurrentHealth = MaxHealth;
         SetMaxHealth(MaxHealth);
+    }
+
+    public void Update()
+    {
+        if (CurrentHealth <= 0)
+        {
+            SceneManager.LoadScene("DeadScene");
+        }
     }
 
     public void SetMaxHealth(int health)

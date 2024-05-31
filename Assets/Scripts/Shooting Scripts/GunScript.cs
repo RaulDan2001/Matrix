@@ -113,6 +113,7 @@ public class GunScript : MonoBehaviour
                     targetBoss.TakeDamage(damage);
                 }
 
+
                 //instantiem sistemul de particule pe punctul lovit si rotim sistemul sa arate in afara suprafetei lovite
                 Instantiate(ImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             }

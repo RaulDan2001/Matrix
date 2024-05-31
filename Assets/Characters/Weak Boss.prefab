@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 4726822618911132470}
   - component: {fileID: 1066442699502024079}
   - component: {fileID: 3193479878953978048}
-  - component: {fileID: 6832856543297909898}
+  - component: {fileID: 1273489990200572165}
   m_Layer: 0
   m_Name: Weak Boss
   m_TagString: Untagged
@@ -413,6 +413,9 @@ MonoBehaviour:
   walkpoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 0.5
+  projectile: {fileID: 0}
+  audioSource: {fileID: 0}
+  ShootClip: {fileID: 0}
   sightRange: 15
   attackRange: 6
   playerInSightRange: 0
@@ -440,7 +443,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6832856543297909898
+--- !u!114 &1273489990200572165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -449,13 +452,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6641662360525688598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53eff32f8a6ca1d4ebbf86e2a717103a, type: 3}
+  m_Script: {fileID: 11500000, guid: ff4e811c9b6596a43ad32357f8d09737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 0
   ScoreText: {fileID: 0}
   playerstats: {fileID: 0}
-  healthBar: {fileID: 3272961215382492199}
+  healthBar: {fileID: 0}
 --- !u!1 &8575737216012149172
 GameObject:
   m_ObjectHideFlags: 0

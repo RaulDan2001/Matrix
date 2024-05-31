@@ -59,8 +59,9 @@ public class EnemyBehavior : MonoBehaviour
 
         //Folosim NavMeshAgent sa ne deplasam la punctul ales
         if (walkPointSet)
+        {
             agent.SetDestination(walkpoint);
-
+        }
         Vector3 distanceToWalkPoint = transform.position - walkpoint;
 
         //Am ajuns la punctul dorit

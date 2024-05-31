@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeadScene.unity
     guid: e6cf3ccc303612c4bab8637e33384ce5
+  - enabled: 1
+    path: Assets/Scenes/CongratsScene.unity
+    guid: 2a96e10504a029841a6d24ddd17b1b1c
   m_configObjects: {}
